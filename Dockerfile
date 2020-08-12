@@ -22,7 +22,7 @@ RUN git clone --branch v6-22-00-patches https://github.com/root-project/root.git
 
 #######################################################################
 
-FROM tensorflow/tensorflow:1.15.2-gpu-py3 as builder
+FROM tensorflow/tensorflow:1.15.2-gpu-py3
 
 ENV LANG=C.UTF-8
 RUN apt-get -y update && apt-get -y upgrade

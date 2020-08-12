@@ -36,6 +36,10 @@ git \
 wget \
 $(cat packages)
 
+COPY cuda/include/cudnn*.h /usr/local/cuda/include/
+COPY cuda/lib64/libcudnn* /usr/local/cuda/lib64/
+RUN chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
+
 COPY --from=builder /workspace/root /opt/root
 COPY entry-point.sh /opt/entry-point.sh
 COPY set-aliases.sh /opt/set-aliases.sh

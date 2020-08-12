@@ -42,7 +42,7 @@ COPY set-aliases.sh /opt/set-aliases.sh
 # RUN chmod a+rwx /opt/entry-point.sh
 
 RUN /usr/local/bin/python -m pip install --upgrade pip
-RUN /usr/local/bin/python -m pip install matplotlib ipython
+RUN /usr/local/bin/python -m pip install matplotlib ipython keras==2.3.1
 RUN source /opt/root/bin/thisroot.sh && /usr/local/bin/python -m pip install root_numpy
 
 ENTRYPOINT ["/opt/entry-point.sh"]
